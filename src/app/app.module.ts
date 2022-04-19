@@ -13,6 +13,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule } from '@angular/material/form-field';
 import { DialogComponent } from './dialog/dialog.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     FormComponent,
     TableComponent,
     DialogComponent,
+   
    
   ],
   imports: [
@@ -33,7 +35,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatIconModule,
     MatInputModule,
     MatFormFieldModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

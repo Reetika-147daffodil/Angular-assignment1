@@ -1,17 +1,19 @@
-<h1 *ngIf="!isDataAvailable">No Data Available</h1>
+
 <app-table
   [tableData]="tableData"
   [isDataAvailable]="isDataAvailable"
   [isAddressAvailable]="isAddressAvailable"
+  (deleteEvent)="deleteTableData($event)"
+  (editEvent)="editTableData($event)"
 ></app-table>
 <br />
 <hr />
 <br />
 
 <h2>Employee Form</h2>
-<div>
+<div style="margin:20px;">
   <form [formGroup]="empForm" (ngSubmit)="save()">
-    <button mat-raised-button color="primary" type="submit">Save</button>
+    <button mat-raised-button color="primary" type="submit" [disabled]="empForm.invalid" (click)="openSnackBar()">Save</button>
     <br />
     <br />
     <mat-form-field
@@ -40,7 +42,6 @@
         formControlName="empCode"
         placeholder="employee code"
     /></mat-form-field>
-  
     <br />
     <mat-form-field
       ><input
